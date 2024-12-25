@@ -4,13 +4,9 @@
   "description": "Functional programming in Sass",
   "main": "./src/lambda.scss",
   "scripts": {
-    "lint": "stylelint src/lambda.scss __tests__/test.scss",
-    "test": "jest --silent",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/p233-studio/lambda-sass.git"
+    "test": "jest",
+    "lint": "stylelint 'src/*.scss'",
+    "prepare": "husky"
   },
   "keywords": [
     "sass",
@@ -18,31 +14,35 @@
     "functional programming",
     "lambda"
   ],
-  "author": "Peiwen Lu",
-  "license": "MIT",
+  "homepage": "https://github.com/p233-studio/lambda-sass#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p233-studio/lambda-sass.git"
+  },
   "bugs": {
     "url": "https://github.com/p233-studio/lambda-sass/issues"
   },
-  "homepage": "https://github.com/p233-studio/lambda-sass#readme",
+  "license": "MIT",
+  "author": "Peiwen Lu",
   "devDependencies": {
-    "@p233/stylelint-config-scss": "^4.0.1",
-    "husky": "^8.0.3",
+    "@p233/stylelint-config-scss": "^4.1.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "jest-environment-node-single-context": "^29.1.0",
-    "lint-staged": "^15.0.2",
-    "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
-    "sass": "^1.69.5",
-    "sass-true": "^7.0.0",
-    "stylelint": "^15.11.0"
+    "jest-environment-node-single-context": "^29.4.0",
+    "lint-staged": "^15.2.11",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "sass-true": "^8.1.0",
+    "stylelint": "^16.12.0",
+    "stylelint-prettier": "^5.0.2"
   },
   "jest": {
     "testEnvironment": "jest-environment-node-single-context"
   },
   "lint-staged": {
     "*.scss": [
-      "stylelint",
-      "prettier --write"
+      "stylelint --fix"
     ]
   },
   "files": [
