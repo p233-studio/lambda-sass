@@ -5,7 +5,7 @@
   "main": "./src/lambda.scss",
   "scripts": {
     "test": "jest",
-    "lint": "stylelint 'src/*.scss'",
+    "lint": "stylelint --fix 'src/*.scss'",
     "prepare": "husky"
   },
   "keywords": [
@@ -28,8 +28,7 @@
     "@p233/stylelint-config-scss": "^4.1.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
-    "jest-environment-node-single-context": "^29.4.0",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "sass": "^1.83.0",
@@ -38,7 +37,7 @@
     "stylelint-prettier": "^5.0.2"
   },
   "jest": {
-    "testEnvironment": "jest-environment-node-single-context"
+    "testEnvironment": "node"
   },
   "lint-staged": {
     "*.scss": [
