@@ -444,28 +444,26 @@
 
 @function some($fn, $list...) {
   $_list: __arglist($list);
-  $_counter: 0;
 
   @each $_i in $_list {
     @if __auto-call($fn, $_i) {
-      $_counter: $_counter + 1;
+      @return true;
     }
   }
 
-  @return $_counter > 0;
+  @return false;
 }
 
 @function every($fn, $list...) {
   $_list: __arglist($list);
-  $_counter: 0;
 
   @each $_i in $_list {
-    @if __auto-call($fn, $_i) {
-      $_counter: $_counter + 1;
+    @if not __auto-call($fn, $_i) {
+      @return false;
     }
   }
 
-  @return $_counter == list.length($_list);
+  @return true;
 }
 
 // ------------------ //
@@ -569,7 +567,7 @@
         $_result: __call-fn($_fn, $_new-args...);
       } @else if $position == "LAST" {
         $_new-args: list.join($_args, $_result);
-        $_result: __call-fn($_fn, $_new_args...);
+        $_result: __call-fn($_fn, $_new-args...);
       } @else {
         $_result: __call-lambda($_i, $_result);
       }
